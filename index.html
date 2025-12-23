@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Home - My Blog</title>
+    <title>Aayati | Personal Blog</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="blog.html">Blog Posts</a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">Aayati</h2>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="blog.html">Blog Posts</a></li>
+        </ul>
     </nav>
-    <header>
-        <h1>Welcome to My Blog</h1>
-    </header>
-    <main>
-        <div id="weather"></div>
-        <h2>Monthly Goals</h2>
-        <ul id="todo-list"></ul>
-        <input type="text" id="new-task" placeholder="Add new task">
-        <button onclick="addTask()">Add</button>
-        <p>This is the Home section of your blog.</p>
-    </main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Hi, I’m Aayati 👋</h1>
+        <p class="tagline">
+            A personal space to share my thoughts, goals, and everyday moments 🌸
+        </p>
+
+        <div class="weather">
+            📍 Sitapur • Clear Sky • 23.1°C
+        </div>
+    </section>
+
+    <!-- GOALS -->
+    <section class="card">
+        <h2>🎯 Monthly Goals</h2>
+
+        <div class="goal-input">
+            <input type="text" id="goalInput" placeholder="Add a new goal...">
+            <button onclick="addGoal()">Add</button>
+        </div>
+
+        <ul id="goalList"></ul>
+
+        <p class="quote">Small steps every day ✨</p>
+    </section>
+
     <script src="app.js"></script>
 </body>
+
 </html>

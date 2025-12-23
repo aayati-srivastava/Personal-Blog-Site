@@ -1,125 +1,254 @@
-body {
-    font-family: Arial, sans-serif;
+/* ------------------ GLOBAL ------------------ */
+
+* {
     margin: 0;
     padding: 0;
-    background: #fafafa;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Navigation bar styles */
-nav {
-    background: #222;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+body {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #333;
+    min-height: 100vh;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 1em;
-    margin: 0 0.5em;
-    transition: background 0.3s;
-    border-radius: 4px;
-}
 
-nav a:hover {
-    background: #444;
-}
+/* ------------------ NAVBAR ------------------ */
 
-/* Header styles */
-header {
-    background: #eee;
-    padding: 2em 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Main content styles */
-main {
-    padding: 2em;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-
-/* Checklist styles */
-#todo-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 1em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#todo-list li {
-    margin: 0.5em 0;
-    padding: 0.4em 0.8em;
-    background: #f0f0f0;
-    border-radius: 4px;
-    min-width: 200px;
+.navbar {
+    background: #111;
+    padding: 18px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
-#todo-list li:hover {
-    background: #e2e2e2;
+.logo {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-#new-task {
-    padding: 0.5em;
-    width: 180px;
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+    color: #fff;
+}
+
+
+/* ------------------ HERO ------------------ */
+
+.hero {
+    text-align: center;
+    padding: 90px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 22px;
+}
+
+.weather {
+    display: inline-block;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ------------------ CARD ------------------ */
+
+.card {
+    max-width: 500px;
+    margin: 0 auto 70px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+
+/* ------------------ GOALS ------------------ */
+
+.goal-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.goal-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 0.5em;
+    outline: none;
 }
 
-button {
-    padding: 0.4em 0.8em;
+.goal-input input:focus {
+    border-color: #111;
+}
+
+.goal-input button {
+    padding: 12px 18px;
     border: none;
-    border-radius: 4px;
-    background: #444;
+    border-radius: 8px;
+    background: #111;
     color: #fff;
     cursor: pointer;
-    margin-left: 0.5em;
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #333;
+.goal-input button:hover {
+    background: #444;
 }
 
-/* Responsive design for mobile */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+
+/* ------------------ GOAL LIST ------------------ */
+
+#goalList {
+    list-style: none;
+    margin-top: 18px;
+}
+
+#goalList li {
+    background: #f6f6f6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+#goalList li span {
+    flex: 1;
+}
+
+
+/* COMPLETE BUTTON */
+
+.complete-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #111;
+    margin-left: 10px;
+}
+
+.complete-btn:hover {
+    color: green;
+}
+
+
+/* COMPLETED GOAL */
+
+.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+
+/* ------------------ BLOG POSTS ------------------ */
+
+.blog-post {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.blog-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.blog-post h3 {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.blog-post p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+/* ------------------ QUOTE ------------------ */
+
+.quote {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+}
+
+
+/* ------------------ ANIMATION ------------------ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
     }
-    nav a {
-        margin: 0.2em 0;
-        width: 100vw;
-        box-sizing: border-box;
-        text-align: center;
-        border-radius: 0;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    main {
-        padding: 1em;
-        max-width: 100%;
-        border-radius: 0;
-        box-shadow: none;
+}
+
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 25px;
     }
-    header {
-        padding: 1em 0;
+    .navbar ul {
+        gap: 18px;
     }
-    #new-task {
-        width: 100vw;
-        min-width: 140px;
+    .hero h1 {
+        font-size: 2.3rem;
     }
-    #todo-list li {
-        min-width: 140px;
+    .card {
+        margin: 0 15px 60px;
+        padding: 28px;
     }
 }
